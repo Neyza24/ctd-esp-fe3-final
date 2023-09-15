@@ -40,3 +40,24 @@ export const getCharacter = async (characterId: number) => {
     if (results.length > 0) return results[0];
     else return null;
 }
+
+export const getCharacters = async () => {
+    const data = await fetchApi(`characters`);
+    return data.data.results;
+};
+
+
+export const getCharacterByComic = async (comicId: number) => {
+    const data = await fetchApi(`comics/${comicId}/characters`);
+    return data.data.results;
+};
+
+export const getComicsByCharacterId = async (
+    characterID: number,
+    limit?: number
+) => {
+    const params = new URLSearchParams();
+    if (limit) params.set("limit", `${limit}`);
+
+    return await fetchApi(`characters/${characterID}/comics`, params.toString());
+};
