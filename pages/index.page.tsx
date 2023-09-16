@@ -60,7 +60,7 @@ const Index: NextPage<IndexProps> = ({ initialComics, initialTotal }) => {
                 <meta name="description" content="Marvel Store Sitio Web" />
             </Head>
             <LayoutGeneral>
-                <BodySingle title={"¡Hey Folks, this is Marvel Store!"}>
+                <BodySingle title={"¡Hola disfruta Marvel Store!"}>
                     {total && (
                         <>
                             <PaginationOutlined count={Math.ceil(total / LIMIT)} page={currentPage} handleChange={handlePagination} />
